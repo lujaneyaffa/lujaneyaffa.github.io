@@ -1,7 +1,7 @@
 {
   "theme": {
-    "headingFont": "Permanent Marker",
-    "bodyFont": "Outfit",
+    "headingFont": "Outfit",
+    "bodyFont": "DM Sans",
     "pageBg": "#FFF8EC",
     "pageInk": "#2B2420",
     "baseSize": 17,
@@ -10,90 +10,20 @@
   },
   "hero": {
     "title": "lujane yaffa",
-    "tagline": "websites, apps and paintings i made. everything here is live.",
-    "bg": "#CF8591",
+    "tagline": "websites, apps and projects i'm working on. everything here is live.",
+    "bg": "#fff8ec",
     "ink": "#4A1D1B",
-    "titleColor": "#FDD8D3",
+    "titleColor": "#c6b7cc",
     "showNav": true,
     "sticker": "media/darvr-logo.jpg",
     "showSticker": true
   },
   "sections": [
     {
-      "id": "art",
-      "nav": "art",
-      "logo": "",
-      "title": "Local Artist",
-      "body": "My original abstract paintings, with a small site to show them. Each piece lists its price and bids, and you place a bid to make it yours. Pieces are made by-request to local shops such as cafes, firms, and clinics. ",
-      "tags": [
-        "original paintings",
-        "bidding",
-        "gallery"
-      ],
-      "button": {
-        "label": "see the gallery",
-        "url": "https://lujane-art.lujane.workers.dev/",
-        "style": "solid"
-      },
-      "flip": true,
-      "bg": "#FFF8EC",
-      "ink": "#2B2420",
-      "mute": "#6E625A",
-      "btn": "#2B2420",
-      "btnInk": "#FFF8EC",
-      "shadow": "#C9B66B",
-      "card": "#FFFFFF",
-      "cardInk": "#6E625A",
-      "media": [
-        {
-          "src": "media/lujane-art-tour.gif",
-          "caption": "",
-          "kind": "big",
-          "badge": "screen recording",
-          "alt": "Scrolling through the Lujane Art gallery"
-        },
-        {
-          "src": "media/p-majestic.jpg",
-          "caption": "",
-          "kind": "tall",
-          "badge": "",
-          "alt": "Painting: majestic"
-        },
-        {
-          "src": "media/p-overstim.jpg",
-          "caption": "",
-          "kind": "tall",
-          "badge": "",
-          "alt": "Painting: overstimulated"
-        },
-        {
-          "src": "media/p-melting.jpg",
-          "caption": "",
-          "kind": "tall",
-          "badge": "",
-          "alt": "Painting: melting from within"
-        },
-        {
-          "src": "media/art-0.jpg",
-          "caption": "the gallery",
-          "kind": "grid",
-          "badge": "",
-          "alt": "Gallery grid with prices and bid counts"
-        },
-        {
-          "src": "media/art-1.jpg",
-          "caption": "more works",
-          "kind": "grid",
-          "badge": "",
-          "alt": "More paintings in the gallery"
-        }
-      ]
-    },
-    {
       "id": "4dasistas",
       "nav": "4dasistas",
       "logo": "media/4ds-logo.jpg",
-      "title": "4dasistas",
+      "title": "4DaSistas",
       "body": "A community calendar and directory for Muslim women in the GTA. It lists hundreds of events across sports, trips, knowledge and clubs, plus tens of mapped Muslim women-owned and Muslim-supporting businesses. It also has clubs and squads for badminton, Quran, cowork and steps. It works offline as an installable web app.",
       "tags": [
         "calendar",
@@ -154,10 +84,66 @@
       ]
     },
     {
+      "id": "art",
+      "nav": "art",
+      "logo": "",
+      "title": "Local Paintings",
+      "body": "My original abstract paintings, with a small site to show them. Pieces are made by-request to local shops such as cafes, firms, and clinics - specifically by client's colour request to match branding and atmosphere of space. ",
+      "tags": [
+        "original paintings",
+        "bidding",
+        "gallery"
+      ],
+      "button": {
+        "label": "see the gallery",
+        "url": "https://lujane-art.lujane.workers.dev/",
+        "style": "solid"
+      },
+      "flip": true,
+      "bg": "#FFF8EC",
+      "ink": "#2B2420",
+      "mute": "#6E625A",
+      "btn": "#2B2420",
+      "btnInk": "#FFF8EC",
+      "shadow": "#C9B66B",
+      "card": "#FFFFFF",
+      "cardInk": "#6E625A",
+      "media": [
+        {
+          "src": "media/lujane-art-tour.gif",
+          "caption": "",
+          "kind": "big",
+          "badge": "screen recording",
+          "alt": "Scrolling through the Lujane Art gallery"
+        },
+        {
+          "src": "media/p-majestic.jpg",
+          "caption": "",
+          "kind": "tall",
+          "badge": "",
+          "alt": "Painting: majestic"
+        },
+        {
+          "src": "media/p-overstim.jpg",
+          "caption": "",
+          "kind": "tall",
+          "badge": "",
+          "alt": "Painting: overstimulated"
+        },
+        {
+          "src": "media/art-1.jpg",
+          "caption": "more works",
+          "kind": "grid",
+          "badge": "",
+          "alt": "More paintings in the gallery"
+        }
+      ]
+    },
+    {
       "id": "darvr2dac",
       "nav": "darvr2dac",
       "logo": "",
-      "title": "darvr2dac",
+      "title": "DaRvr2DaC",
       "body": "\"For Palestine to Palestine.\" A Palestine awareness brand and fundraising store with stickers, posters and keychains. The site also teaches the symbols of Palestinian identity: olives, the spoon, the kuffiyah, the Key of Return, Yaffa oranges, the dove, Handala and watermelons.",
       "tags": [
         "online store",
@@ -187,13 +173,6 @@
           "alt": "Screen recording of the DARVR2DAC site"
         },
         {
-          "src": "media/darvr2dac-top-0.jpg",
-          "caption": "the home page",
-          "kind": "grid",
-          "badge": "",
-          "alt": "DARVR2DAC home page: For Palestine to Palestine"
-        },
-        {
           "src": "media/darvr2dac-site-0.jpg",
           "caption": "olives and the spoon",
           "kind": "grid",
@@ -210,10 +189,37 @@
       ]
     },
     {
+      "id": "health",
+      "nav": "health tracker",
+      "logo": "",
+      "title": "My Amana",
+      "body": "A private daily log for energy, mood, sleep, routines, medications and appointments, with a calendar and notes. It sits behind an unlock screen because the data is personal, so there are no screenshots here.",
+      "tags": [
+        "daily log",
+        "calendar",
+        "locked"
+      ],
+      "button": {
+        "label": "private app",
+        "url": "",
+        "style": "outline"
+      },
+      "flip": false,
+      "bg": "#E9E2F2",
+      "ink": "#2B2340",
+      "mute": "#6A6082",
+      "btn": "#6A6082",
+      "btnInk": "#FFFFFF",
+      "shadow": "#6A6082",
+      "card": "#FFFFFF",
+      "cardInk": "#6A6082",
+      "media": []
+    },
+    {
       "id": "ayah",
       "nav": "ayah",
       "logo": "",
-      "title": "ayah",
+      "title": "Ayah",
       "body": "A Quran verse widget for reading and memorizing. Pick any surah and verse, show English, Arabic or tafsir, and listen with a choice of reciters at the speed you want. Star verses to build your memorized list, then recite a page out loud and have it checked live. It installs to your home screen.",
       "tags": [
         "read",
@@ -258,33 +264,6 @@
           "alt": "Ayah memorization check with colour-coded verses"
         }
       ]
-    },
-    {
-      "id": "health",
-      "nav": "health tracker",
-      "logo": "",
-      "title": "health tracker",
-      "body": "A private daily log for energy, mood, sleep, routines, medications and appointments, with a calendar and notes. It sits behind an unlock screen because the data is personal, so there are no screenshots here.",
-      "tags": [
-        "daily log",
-        "calendar",
-        "locked"
-      ],
-      "button": {
-        "label": "private app",
-        "url": "",
-        "style": "outline"
-      },
-      "flip": false,
-      "bg": "#E9E2F2",
-      "ink": "#2B2340",
-      "mute": "#6A6082",
-      "btn": "#6A6082",
-      "btnInk": "#FFFFFF",
-      "shadow": "#6A6082",
-      "card": "#FFFFFF",
-      "cardInk": "#6A6082",
-      "media": []
     }
   ],
   "footer": {
