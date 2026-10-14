@@ -20,75 +20,11 @@
   },
   "sections": [
     {
-      "id": "4dasistas",
-      "nav": "4dasistas",
-      "logo": "media/4ds-logo.jpg",
-      "title": "4dasistas",
-      "body": "A community calendar and directory for Muslim women in the GTA. It lists hundreds of events across sports, trips, knowledge and clubs, plus tens of mapped Muslim women-owned and Muslim-supporting businesses. It also has clubs and squads for badminton, Quran, cowork and steps. It works offline as an installable web app.",
-      "tags": [
-        "calendar",
-        "map directory",
-        "clubs & squads",
-        "works offline"
-      ],
-      "button": {
-        "label": "open 4dasistas.ca",
-        "url": "https://4dasistas.ca",
-        "style": "solid"
-      },
-      "flip": false,
-      "bg": "#FBE4E0",
-      "ink": "#3E1517",
-      "mute": "#7A4A4C",
-      "btn": "#7A2E3B",
-      "btnInk": "#FFF3F0",
-      "shadow": "#7A2E3B",
-      "card": "#FFFFFF",
-      "cardInk": "#7A4A4C",
-      "media": [
-        {
-          "src": "media/4dasistas-tour.gif",
-          "caption": "",
-          "kind": "big",
-          "badge": "screen recording",
-          "alt": "Screen recording of 4DASISTAS: calendar, clubs, squads and directory"
-        },
-        {
-          "src": "media/4ds-1.jpg",
-          "caption": "the calendar",
-          "kind": "grid",
-          "badge": "",
-          "alt": "4DASISTAS monthly calendar with colour-coded event types"
-        },
-        {
-          "src": "media/4ds-6.jpg",
-          "caption": "the directory",
-          "kind": "grid",
-          "badge": "",
-          "alt": "4DASISTAS directory with categories and 53 mapped resources"
-        },
-        {
-          "src": "media/4ds-3.jpg",
-          "caption": "the clubs",
-          "kind": "grid",
-          "badge": "",
-          "alt": "4DASISTAS clubs: Quest, Cuisine, Arts and Field"
-        },
-        {
-          "src": "media/4ds-5.jpg",
-          "caption": "the squads",
-          "kind": "grid",
-          "badge": "",
-          "alt": "4DASISTAS squads: Quran, Badminton, Cowork and Steps"
-        }
-      ]
-    },
-    {
       "id": "art",
       "nav": "art",
       "logo": "",
-      "title": "lujane yaffa art",
-      "body": "My original abstract paintings, with a small site to show them. Each piece lists its price and bids, and you place a bid to make it yours. Works run from $300 to $1,000.",
+      "title": "Local Artist",
+      "body": "My original abstract paintings, with a small site to show them. Each piece lists its price and bids, and you place a bid to make it yours. Pieces are made by-request to local shops such as cafes, firms, and clinics. ",
       "tags": [
         "original paintings",
         "bidding",
@@ -150,6 +86,70 @@
           "kind": "grid",
           "badge": "",
           "alt": "More paintings in the gallery"
+        }
+      ]
+    },
+    {
+      "id": "4dasistas",
+      "nav": "4dasistas",
+      "logo": "media/4ds-logo.jpg",
+      "title": "4dasistas",
+      "body": "A community calendar and directory for Muslim women in the GTA. It lists hundreds of events across sports, trips, knowledge and clubs, plus tens of mapped Muslim women-owned and Muslim-supporting businesses. It also has clubs and squads for badminton, Quran, cowork and steps. It works offline as an installable web app.",
+      "tags": [
+        "calendar",
+        "map directory",
+        "clubs & squads",
+        "works offline"
+      ],
+      "button": {
+        "label": "open 4dasistas.ca",
+        "url": "https://4dasistas.ca",
+        "style": "solid"
+      },
+      "flip": false,
+      "bg": "#FBE4E0",
+      "ink": "#3E1517",
+      "mute": "#7A4A4C",
+      "btn": "#7A2E3B",
+      "btnInk": "#FFF3F0",
+      "shadow": "#7A2E3B",
+      "card": "#FFFFFF",
+      "cardInk": "#7A4A4C",
+      "media": [
+        {
+          "src": "media/4dasistas-tour.gif",
+          "caption": "",
+          "kind": "big",
+          "badge": "screen recording",
+          "alt": "Screen recording of 4DASISTAS: calendar, clubs, squads and directory"
+        },
+        {
+          "src": "media/4ds-1.jpg",
+          "caption": "the calendar",
+          "kind": "grid",
+          "badge": "",
+          "alt": "4DASISTAS monthly calendar with colour-coded event types"
+        },
+        {
+          "src": "media/4ds-6.jpg",
+          "caption": "the directory",
+          "kind": "grid",
+          "badge": "",
+          "alt": "4DASISTAS directory with categories and 53 mapped resources"
+        },
+        {
+          "src": "media/4ds-3.jpg",
+          "caption": "the clubs",
+          "kind": "grid",
+          "badge": "",
+          "alt": "4DASISTAS clubs: Quest, Cuisine, Arts and Field"
+        },
+        {
+          "src": "media/4ds-5.jpg",
+          "caption": "the squads",
+          "kind": "grid",
+          "badge": "",
+          "alt": "4DASISTAS squads: Quran, Badminton, Cowork and Steps"
         }
       ]
     },
