@@ -9,11 +9,11 @@
     "tilt": true
   },
   "hero": {
-    "title": "lujane yaffa",
-    "tagline": "websites, apps and projects i'm working on. everything here is live.",
-    "bg": "#fff8ec",
-    "ink": "#4A1D1B",
-    "titleColor": "#c6b7cc",
+    "title": "Lujane Yaffa",
+    "tagline": "websites, apps, and projects i'm working on. everything here is live.",
+    "bg": "#fefaff",
+    "ink": "#8e718d",
+    "titleColor": "#000000",
     "showNav": true,
     "sticker": "media/logo.jpg",
     "showSticker": true
@@ -22,7 +22,7 @@
     {
       "id": "4dasistas",
       "nav": "4dasistas",
-      "logo": "media/4ds-logo.jpg",
+      "logo": "",
       "title": "4DaSistas",
       "body": "A community calendar and directory for Muslim women in the GTA. It lists hundreds of events across sports, trips, knowledge and clubs, plus tens of mapped Muslim women-owned and Muslim-supporting businesses. It also has clubs and squads for badminton, Quran, cowork and steps. It works offline as an installable web app.",
       "tags": [
@@ -52,34 +52,6 @@
           "kind": "big",
           "badge": "screen recording",
           "alt": "Screen recording of 4DASISTAS: calendar, clubs, squads and directory"
-        },
-        {
-          "src": "media/4ds-1.jpg",
-          "caption": "the calendar",
-          "kind": "grid",
-          "badge": "",
-          "alt": "4DASISTAS monthly calendar with colour-coded event types"
-        },
-        {
-          "src": "media/4ds-6.jpg",
-          "caption": "the directory",
-          "kind": "grid",
-          "badge": "",
-          "alt": "4DASISTAS directory with categories and 53 mapped resources"
-        },
-        {
-          "src": "media/4ds-3.jpg",
-          "caption": "the clubs",
-          "kind": "grid",
-          "badge": "",
-          "alt": "4DASISTAS clubs: Quest, Cuisine, Arts and Field"
-        },
-        {
-          "src": "media/4ds-5.jpg",
-          "caption": "the squads",
-          "kind": "grid",
-          "badge": "",
-          "alt": "4DASISTAS squads: Quran, Badminton, Cowork and Steps"
         }
       ],
       "bubbles": [
@@ -156,18 +128,11 @@
           "alt": "Painting: majestic"
         },
         {
-          "src": "media/p-overstim.jpg",
+          "src": "media/melting-from-within-mu4psu8l-1-mv8g1cdo.jpg",
           "caption": "",
           "kind": "tall",
           "badge": "",
           "alt": "Painting: overstimulated"
-        },
-        {
-          "src": "media/art-1.jpg",
-          "caption": "more works",
-          "kind": "grid",
-          "badge": "",
-          "alt": "More paintings in the gallery"
         }
       ]
     },
@@ -188,14 +153,14 @@
         "style": "solid"
       },
       "flip": false,
-      "bg": "#F4EEDC",
-      "ink": "#2F3A1C",
-      "mute": "#66703F",
-      "btn": "#5F6F3C",
+      "bg": "#f5edee",
+      "ink": "#6c2e23",
+      "mute": "#6d3636",
+      "btn": "#8f3232",
       "btnInk": "#FFF8EC",
       "shadow": "#FF3B00",
       "card": "#FFFFFF",
-      "cardInk": "#66703F",
+      "cardInk": "#b06970",
       "media": [
         {
           "src": "media/darvr2dac-site.gif",
@@ -210,27 +175,6 @@
           "kind": "big",
           "badge": "screen recording",
           "alt": "Scrolling the DARVR2DAC shop"
-        },
-        {
-          "src": "media/darvr2dac-martyrs.gif",
-          "caption": "the martyrs page",
-          "kind": "big",
-          "badge": "screen recording",
-          "alt": "Scrolling the martyrs page"
-        },
-        {
-          "src": "media/darvr2dac-site-0.jpg",
-          "caption": "olives and the spoon",
-          "kind": "grid",
-          "badge": "",
-          "alt": "DARVR2DAC symbols section with olives and the spoon"
-        },
-        {
-          "src": "media/darvr2dac-site-1.jpg",
-          "caption": "kuffiyah and the key",
-          "kind": "grid",
-          "badge": "",
-          "alt": "DARVR2DAC symbols section with the kuffiyah and the Key of Return"
         }
       ]
     },
@@ -267,27 +211,6 @@
           "kind": "big",
           "badge": "screen recording",
           "alt": "Screen recording of Health Tracker: today, calendar, maintenance, notes, care"
-        },
-        {
-          "src": "media/health-today.jpg",
-          "caption": "today",
-          "kind": "grid",
-          "badge": "",
-          "alt": "Health Tracker today view"
-        },
-        {
-          "src": "media/health-calendar.jpg",
-          "caption": "calendar",
-          "kind": "grid",
-          "badge": "",
-          "alt": "Health Tracker month calendar"
-        },
-        {
-          "src": "media/health-care.jpg",
-          "caption": "care",
-          "kind": "grid",
-          "badge": "",
-          "alt": "Health Tracker care page"
         }
       ]
     },
@@ -326,16 +249,9 @@
           "alt": "Screen recording of Ayah: reading verses, then the memorization check"
         },
         {
-          "src": "media/ayah-site-0.jpg",
-          "caption": "read",
-          "kind": "grid",
-          "badge": "",
-          "alt": "Ayah reading view with Arabic and English"
-        },
-        {
           "src": "media/ayah-site-2.jpg",
           "caption": "check",
-          "kind": "grid",
+          "kind": "tall",
           "badge": "",
           "alt": "Ayah memorization check with colour-coded verses"
         }
