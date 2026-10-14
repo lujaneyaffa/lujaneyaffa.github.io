@@ -14,6 +14,12 @@ const slug=s=>s.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")||"
 
 document.getElementById("editor-css").textContent=`
 body.ed{padding-top:54px}
+body.ed.pn{padding-right:340px}
+.rsz{position:absolute;right:0;bottom:0;width:26px;height:26px;cursor:nwse-resize;z-index:6;background:linear-gradient(135deg,transparent 50%,#FF3B00 50%);border-bottom-right-radius:8px;touch-action:none}
+.shot.dropto{outline:4px solid #FF3B00;outline-offset:-4px}
+.mtools .mv{cursor:grab}
+.spanlab{position:absolute;left:8px;bottom:8px;background:#2B2420;color:#FFF8EC;font:600 12px Outfit,system-ui,sans-serif;padding:2px 8px;border-radius:99px;z-index:6;display:none}
+.shot.resizing .spanlab{display:block}
 #edbar{position:fixed;top:0;left:0;right:0;z-index:9999;background:#2B2420;color:#FFF8EC;display:flex;gap:8px;align-items:center;padding:8px 12px;font:600 14px Outfit,system-ui,sans-serif;flex-wrap:wrap}
 #edbar button,.edb{font:inherit;cursor:pointer;border:2px solid #FFF8EC;background:transparent;color:#FFF8EC;border-radius:6px;padding:5px 11px}
 #edbar button:hover,.edb:hover{background:#FFF8EC;color:#2B2420}
@@ -52,7 +58,8 @@ panel=$("div",{id:"edpanel"});document.body.appendChild(panel);
 bar.querySelector("#restore").style.display=LS.get("ly_draft")?"":"none";
 
 let sel=-1;
-function openPanel(html,wire){panel.innerHTML=html;panel.style.display="block";wire&&wire(panel)}
+function openPanel(html,wire){panel.innerHTML=html;panel.style.display="block";document.body.classList.add("pn");wire&&wire(panel)}
+function closePanel(){panel.style.display="none";document.body.classList.remove("pn")}
 function rerender(keepSel){const y=scrollY;render();scrollTo(0,y)}
 
 /* ---------- text editing ---------- */
@@ -60,8 +67,8 @@ document.addEventListener("input",e=>{
   const el=e.target.closest&&e.target.closest("[data-path]");if(!el||!document.body.classList.contains("ed"))return;
   set(SITE,el.dataset.path,el.innerText.replace(/\n+$/,""));mark();
 });
-document.addEventListener("keydown",e=>{ if(e.key==="Enter"&&e.target.matches&&e.target.matches("h1[data-path],h2[data-path],.go[data-path],.rec,figcaption,footer [data-path]")){e.preventDefault();e.target.blur()}});
-document.addEventListener("click",e=>{ if(e.target.closest&&e.target.closest("#app a")&&!e.target.closest("nav")&&document.body.classList.contains("ed"))e.preventDefault()},true);
+document.addEventListener("keydown",e=>{ if(e.key==="Enter"&&e.target.matches&&e.target.matches("h1[data-path],h2[data-path],.go[data-path],.rec,figcaption,footer [data-path],li[data-path],nav [data-path],.bub [data-path]")){e.preventDefault();e.target.blur()}});
+document.addEventListener("click",e=>{ if(e.target.closest&&e.target.closest("#app a")&&document.body.classList.contains("ed"))e.preventDefault()},true);
 document.addEventListener("paste",e=>{ const el=e.target.closest&&e.target.closest("[data-path]");if(!el)return;e.preventDefault();document.execCommand("insertText",false,(e.clipboardData||window.clipboardData).getData("text/plain"))});
 
 /* ---------- images ---------- */
@@ -89,13 +96,24 @@ window.Editor={decorate(){
     b.querySelectorAll(".shot").forEach(f=>{
       const mi=+f.dataset.mi,mt=$("div",{class:"mtools"});
       const mb=(l,fn,ti)=>mt.appendChild($("button",{class:"edb",title:ti,on:{click:e=>{e.stopPropagation();fn()}}},l));
+      const hd=mt.appendChild($("button",{class:"edb mv",title:"drag me onto another picture to move it",draggable:"true"},"⠿ drag"));
+      hd.addEventListener("dragstart",e=>{e.dataTransfer.setData("text/plain",i+","+mi);e.dataTransfer.effectAllowed="move";try{e.dataTransfer.setDragImage(f,20,20)}catch(x){}});
       mb("◀",()=>mmove(i,mi,-1),"earlier");mb("▶",()=>mmove(i,mi,1),"later");
-      mb("size",()=>{const k=["grid","big","tall"];const m=SITE.sections[i].media[mi];m.kind=k[(k.indexOf(m.kind)+1)%3];mark();rerender()},"cycle size: small / wide / tall");
+      mb("shape",()=>{const R=["4/3","3/4","16/9","1/1","auto"];const m=SITE.sections[i].media[mi];const cur=m.ratio||(m.kind==="big"?"auto":m.kind==="tall"?"3/4":"4/3");m.ratio=R[(R.indexOf(cur)+1)%R.length];if(!m.span)m.span=m.kind==="big"?6:3;mark();rerender();say("shape: "+m.ratio.replace("/",":"))},"cycle the picture shape (crop)");
       mb("swap",()=>pickImage((n)=>{SITE.sections[i].media[mi].src=n;mark();rerender()}),"replace image");
       mb("✕",()=>{SITE.sections[i].media.splice(mi,1);mark();rerender()},"remove");
+      f.addEventListener("dragover",e=>{e.preventDefault();f.classList.add("dropto")});
+      f.addEventListener("dragleave",()=>f.classList.remove("dropto"));
+      f.addEventListener("drop",e=>{e.preventDefault();f.classList.remove("dropto");const [si2,mi2]=(e.dataTransfer.getData("text/plain")||"").split(",").map(Number);if(isNaN(si2))return;
+        const src=SITE.sections[si2].media,[it]=src.splice(mi2,1);SITE.sections[i].media.splice(mi,0,it);mark();rerender()});
+      const rz=$("div",{class:"rsz",title:"drag to resize"}),lab=$("span",{class:"spanlab"});f.appendChild(rz);f.appendChild(lab);
+      rz.addEventListener("pointerdown",e=>{e.preventDefault();rz.setPointerCapture(e.pointerId);f.classList.add("resizing");const grid=f.parentElement.getBoundingClientRect(),fl=f.getBoundingClientRect().left;const m=SITE.sections[i].media[mi];
+        const mv=ev=>{const frac=Math.max(.1,Math.min(1,(ev.clientX-fl)/grid.width));const sp=[2,3,4,6].reduce((a,b)=>Math.abs(b/6-frac)<Math.abs(a/6-frac)?b:a);m.span=sp;f.style.setProperty("--span",sp);lab.textContent=({2:"1/3",3:"1/2",4:"2/3",6:"full"})[sp]+" width"};
+        const up=()=>{rz.removeEventListener("pointermove",mv);rz.removeEventListener("pointerup",up);f.classList.remove("resizing");mark();rerender()};
+        rz.addEventListener("pointermove",mv);rz.addEventListener("pointerup",up)});
       f.appendChild(mt);
     });
-    const am=$("div",{class:"addmedia",on:{click:()=>pickImage((n)=>{const s=SITE.sections[i];(s.media=s.media||[]).push({src:n,caption:"",kind:"grid",badge:"",alt:""});mark();rerender()})}},"+ add a screenshot or gif");
+    const am=$("div",{class:"addmedia",on:{click:()=>pickImage((n)=>{const s=SITE.sections[i];(s.media=s.media||[]).push({src:n,caption:"",span:3,ratio:/\.gif$/i.test(n)?"auto":"4/3",badge:"",alt:""});mark();rerender()})}},"+ add a screenshot or gif");
     const mm=b.querySelector(".media");mm.appendChild(am);
     if(b.classList.contains("nomedia")){b.classList.remove("nomedia");}
   });
@@ -107,7 +125,7 @@ function mmove(i,mi,d){const a=SITE.sections[i].media,j=mi+d;if(j<0||j>=a.length
 function dup(i){const c=JSON.parse(JSON.stringify(SITE.sections[i]));c.id=c.id+"-"+Date.now().toString(36).slice(-3);c.title+=" copy";SITE.sections.splice(i+1,0,c);mark();rerender()}
 function del(i){const s=SITE.sections[i];if(!window.__armed||window.__armed!==s.id){window.__armed=s.id;say('tap ✕ again on "'+s.title+'" to delete it');setTimeout(()=>window.__armed=null,4000);return}
   SITE.sections.splice(i,1);window.__armed=null;mark();rerender()}
-function newSection(){return{id:"new-"+Date.now().toString(36).slice(-4),nav:"new",logo:"",title:"new project",body:"Say what it is in a sentence or two.",tags:["tag one","tag two"],button:{label:"open it",url:"https://",style:"solid"},flip:false,
+function newSection(){return{id:"new-"+Date.now().toString(36).slice(-4),nav:"new",logo:"",title:"new project",body:"Say what it is in a sentence or two.",tags:["tag one","tag two"],links:[],button:{label:"open it",url:"https://",style:"solid"},flip:false,
   bg:"#FDD8D3",ink:"#4A1D1B",mute:"#7A4A4C",btn:"#4A1D1B",btnInk:"#FFF8EC",shadow:"#CF8591",card:"#FFFFFF",cardInk:"#7A4A4C",media:[]}}
 bar.querySelector("#addsec").onclick=()=>{SITE.sections.push(newSection());mark();rerender();setTimeout(()=>{const b=[...document.querySelectorAll(".band")].pop();b.scrollIntoView({behavior:"smooth"})},50)};
 bar.querySelector("#restore").onclick=()=>{try{SITE=JSON.parse(LS.get("ly_draft"));dirty=true;rerender();say("restored your unsaved edits")}catch(e){say("couldn't restore")}};
@@ -123,24 +141,25 @@ function themePanel(){const t=SITE.theme;
   <p class="h">Colours for each project are under "design" on that section.</p><button class="edb" id="x">close</button>`,p=>{
     const on=(id,f)=>p.querySelector("#"+id).addEventListener("input",e=>{f(e.target);mark();window.render();});
     on("hf",e=>t.headingFont=e.value);on("bf",e=>t.bodyFont=e.value);on("bs",e=>t.baseSize=+e.value);on("hs",e=>t.headScale=e.value/100);
-    on("pb",e=>t.pageBg=e.value);on("pi",e=>t.pageInk=e.value);    p.querySelector("#x").onclick=()=>panel.style.display="none"})}
+    on("pb",e=>t.pageBg=e.value);on("pi",e=>t.pageInk=e.value);    p.querySelector("#x").onclick=()=>closePanel()})}
 bar.querySelector("#th").onclick=themePanel;
 
 function heroPanel(){const h=SITE.hero;
   openPanel(`<h3>top of the page</h3><label>background <input type="color" id="a" value="${h.bg}"></label><label>title colour <input type="color" id="b" value="${h.titleColor}"></label><label>text / outline <input type="color" id="c" value="${h.ink}"></label>
-  <label>show menu <input type="checkbox" id="n" ${h.showNav?"checked":""}></label><label>show sticker <input type="checkbox" id="s" ${h.showSticker?"checked":""}></label>
-  <button class="edb" id="sp">change sticker image</button><p class="h">Click the big words on the page to retype them.</p><button class="edb" id="x">close</button>`,p=>{
+  <label>show menu <input type="checkbox" id="n" ${h.showNav?"checked":""}></label>
+  <h3>footer</h3><label>background <input type="color" id="fb" value="${SITE.footer.bg||h.bg}"></label><label>text <input type="color" id="fi" value="${SITE.footer.ink||h.ink}"></label><p class="h">Click the big words on the page to retype them.</p><button class="edb" id="x">close</button>`,p=>{
     const on=(id,f)=>p.querySelector("#"+id).addEventListener("input",e=>{f(e.target);mark();window.render()});
     on("a",e=>h.bg=e.value);on("b",e=>h.titleColor=e.value);on("c",e=>h.ink=e.value);
-    p.querySelector("#n").onchange=e=>{h.showNav=e.target.checked;mark();window.render()};p.querySelector("#s").onchange=e=>{h.showSticker=e.target.checked;mark();window.render()};
-    p.querySelector("#sp").onclick=()=>pickImage(n=>{h.sticker=n;h.showSticker=true;mark();window.render()});
-    p.querySelector("#x").onclick=()=>panel.style.display="none"})}
+    p.querySelector("#n").onchange=e=>{h.showNav=e.target.checked;mark();window.render()};on("fb",e=>SITE.footer.bg=e.value);on("fi",e=>SITE.footer.ink=e.value);
+    p.querySelector("#x").onclick=()=>closePanel()})}
 
 function secPanel(i){const s=SITE.sections[i];
   openPanel(`<h3>${s.title}</h3>
   <label>menu name <input type="text" id="nav" value="${s.nav||""}"></label>
   <label>button link <input type="text" id="url" value="${s.button.url||""}"></label>
   <label>button look <select id="bst"><option value="solid" ${s.button.style==="solid"?"selected":""}>solid</option><option value="outline" ${s.button.style==="outline"?"selected":""}>outline</option></select></label>
+  <label>instagram link <input type="text" id="ig" placeholder="https://instagram.com/..." value="${(((s.links||[]).find(l=>l.type==="ig"))||{}).url||""}"></label>
+  <label>tiktok link <input type="text" id="tt" placeholder="https://tiktok.com/@..." value="${(((s.links||[]).find(l=>l.type==="tiktok"))||{}).url||""}"></label>
   <label>tags (commas) <input type="text" id="tg" value="${(s.tags||[]).join(", ")}"></label>
   <label>photos on left <input type="checkbox" id="fl" ${s.flip?"checked":""}></label>
   <h3>colours</h3>${COLORS.map(([k,l])=>`<label>${l} <input type="color" data-c="${k}" value="${s[k]||"#c9c4bc"}"></label>`).join("")}
@@ -148,18 +167,18 @@ function secPanel(i){const s=SITE.sections[i];
   <p class="h">Click any words on the page to retype them.</p><button class="edb" id="x">close</button>`,p=>{
     const on=(id,f,ev="input")=>p.querySelector("#"+id).addEventListener(ev,e=>{f(e.target);mark();rerender()});
     on("nav",e=>s.nav=e.value);on("url",e=>s.button.url=e.value);on("bst",e=>s.button.style=e.value,"change");
-    on("tg",e=>s.tags=e.value.split(",").map(x=>x.trim()).filter(Boolean));on("fl",e=>s.flip=e.checked,"change");
+    const setLink=(t,v)=>{s.links=(s.links||[]).filter(l=>l.type!==t);if(v)s.links.push({type:t,url:v});s.links.sort((a,b)=>a.type==="ig"?-1:1)};on("ig",e=>setLink("ig",e.value.trim()));on("tt",e=>setLink("tiktok",e.value.trim()));on("tg",e=>s.tags=e.value.split(",").map(x=>x.trim()).filter(Boolean));on("fl",e=>s.flip=e.checked,"change");
     p.querySelectorAll("[data-c]").forEach(c=>c.addEventListener("input",e=>{s[c.dataset.c]=c.value;mark();const b=document.querySelectorAll(".band")[i];b.style.setProperty("--"+c.dataset.c,c.value)}));
     p.querySelector("#lg").onclick=()=>pickImage(n=>{s.logo=n;mark();rerender()});const lx=p.querySelector("#lgx");if(lx)lx.onclick=()=>{s.logo="";mark();rerender()};
-    p.querySelector("#x").onclick=()=>panel.style.display="none"})}
+    p.querySelector("#x").onclick=()=>closePanel()})}
 
 function settingsPanel(){
   openPanel(`<h3>github token</h3><p class="h">This lets the Save button publish your edits. It stays in this browser only. Make one at github.com/settings/personal-access-tokens/new : only this repository, permission "Contents: Read and write".</p>
   <input class="w" type="password" id="tk" placeholder="github_pat_..." value="${LS.get("ly_token")||""}">
   <p class="h">repository</p><input class="w" type="text" id="rp" value="${LS.get("ly_repo")||"lujaneyaffa/lujaneyaffa.github.io"}">
   <p><button class="edb" id="ok">keep</button> <button class="edb" id="x">close</button></p>`,p=>{
-    p.querySelector("#ok").onclick=()=>{LS.set("ly_token",p.querySelector("#tk").value.trim());LS.set("ly_repo",p.querySelector("#rp").value.trim());say("saved on this device");panel.style.display="none"};
-    p.querySelector("#x").onclick=()=>panel.style.display="none"})}
+    p.querySelector("#ok").onclick=()=>{LS.set("ly_token",p.querySelector("#tk").value.trim());LS.set("ly_repo",p.querySelector("#rp").value.trim());say("saved on this device");closePanel()};
+    p.querySelector("#x").onclick=()=>closePanel()})}
 bar.querySelector("#settings").onclick=settingsPanel;
 
 /* ---------- save to GitHub ---------- */

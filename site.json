@@ -14,9 +14,7 @@
     "bg": "#fefaff",
     "ink": "#8e718d",
     "titleColor": "#000000",
-    "showNav": true,
-    "sticker": "media/logo.jpg",
-    "showSticker": true
+    "showNav": true
   },
   "sections": [
     {
@@ -59,33 +57,47 @@
           "name": "quest",
           "img": "media/club-quest.png",
           "text": "Escape rooms, VR, challenges and adrenaline-filled activities.",
-          "color": "#D6E6F7",
-          "ink": "#3C5A7A"
+          "color": "#D6E8F7",
+          "ink": "#3C5A7A",
+          "url": "https://4dasistas.ca/#/clubs"
         },
         {
           "name": "cuisine",
           "img": "media/club-cuisine.png",
           "text": "Group dinners, halal restaurant crawls and food adventures.",
-          "color": "#FFEDB5",
-          "ink": "#9A6A12"
+          "color": "#FFEFB7",
+          "ink": "#9A6A12",
+          "url": "https://4dasistas.ca/#/clubs"
         },
         {
           "name": "arts",
           "img": "media/club-arts.png",
           "text": "Painting nights, DIY sessions and low-key crafternoons.",
-          "color": "#E4DDF7",
-          "ink": "#6B54B8"
+          "color": "#E2DDF4",
+          "ink": "#6B54B8",
+          "url": "https://4dasistas.ca/#/clubs"
         },
         {
           "name": "field",
           "img": "media/club-field.png",
           "text": "Lakes, hikes, cabins and nature days away from the city.",
-          "color": "#D9EBD6",
-          "ink": "#2F5B44"
+          "color": "#DEEBD1",
+          "ink": "#2F5B44",
+          "url": "https://4dasistas.ca/#/clubs"
         }
       ],
       "bubblesTitle": "the clubs",
-      "bubblesHint": "hover a bubble"
+      "bubblesHint": "hover a bubble",
+      "links": [
+        {
+          "type": "ig",
+          "url": "https://www.instagram.com/4dasistas.ca/"
+        },
+        {
+          "type": "tiktok",
+          "url": "https://www.tiktok.com/@4dasistas"
+        }
+      ]
     },
     {
       "id": "art",
@@ -175,6 +187,16 @@
           "kind": "big",
           "badge": "screen recording",
           "alt": "Scrolling the DARVR2DAC shop"
+        }
+      ],
+      "links": [
+        {
+          "type": "ig",
+          "url": "https://www.instagram.com/darvr2dac/"
+        },
+        {
+          "type": "tiktok",
+          "url": "https://www.tiktok.com/@darvr2dac"
         }
       ]
     },
