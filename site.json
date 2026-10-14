@@ -1,0 +1,294 @@
+{
+  "theme": {
+    "headingFont": "Permanent Marker",
+    "bodyFont": "Outfit",
+    "pageBg": "#FFF8EC",
+    "pageInk": "#2B2420",
+    "baseSize": 17,
+    "headScale": 1,
+    "tilt": true
+  },
+  "hero": {
+    "title": "lujane yaffa",
+    "tagline": "websites, apps and paintings i made. everything here is live.",
+    "bg": "#CF8591",
+    "ink": "#4A1D1B",
+    "titleColor": "#FDD8D3",
+    "showNav": true,
+    "sticker": "media/darvr-logo.jpg",
+    "showSticker": true
+  },
+  "sections": [
+    {
+      "id": "4dasistas",
+      "nav": "4dasistas",
+      "logo": "media/4ds-logo.jpg",
+      "title": "4dasistas",
+      "body": "A community calendar and directory for Muslim women in the GTA. It lists hundreds of events across sports, trips, knowledge and clubs, plus tens of mapped Muslim women-owned and Muslim-supporting businesses. It also has clubs and squads for badminton, Quran, cowork and steps. It works offline as an installable web app.",
+      "tags": [
+        "calendar",
+        "map directory",
+        "clubs & squads",
+        "works offline"
+      ],
+      "button": {
+        "label": "open 4dasistas.ca",
+        "url": "https://4dasistas.ca",
+        "style": "solid"
+      },
+      "flip": false,
+      "bg": "#FBE4E0",
+      "ink": "#3E1517",
+      "mute": "#7A4A4C",
+      "btn": "#7A2E3B",
+      "btnInk": "#FFF3F0",
+      "shadow": "#7A2E3B",
+      "card": "#FFFFFF",
+      "cardInk": "#7A4A4C",
+      "media": [
+        {
+          "src": "media/4dasistas-tour.gif",
+          "caption": "",
+          "kind": "big",
+          "badge": "screen recording",
+          "alt": "Screen recording of 4DASISTAS: calendar, clubs, squads and directory"
+        },
+        {
+          "src": "media/4ds-1.jpg",
+          "caption": "the calendar",
+          "kind": "grid",
+          "badge": "",
+          "alt": "4DASISTAS monthly calendar with colour-coded event types"
+        },
+        {
+          "src": "media/4ds-6.jpg",
+          "caption": "the directory",
+          "kind": "grid",
+          "badge": "",
+          "alt": "4DASISTAS directory with categories and 53 mapped resources"
+        },
+        {
+          "src": "media/4ds-3.jpg",
+          "caption": "the clubs",
+          "kind": "grid",
+          "badge": "",
+          "alt": "4DASISTAS clubs: Quest, Cuisine, Arts and Field"
+        },
+        {
+          "src": "media/4ds-5.jpg",
+          "caption": "the squads",
+          "kind": "grid",
+          "badge": "",
+          "alt": "4DASISTAS squads: Quran, Badminton, Cowork and Steps"
+        }
+      ]
+    },
+    {
+      "id": "art",
+      "nav": "art",
+      "logo": "",
+      "title": "lujane yaffa art",
+      "body": "My original abstract paintings, with a small site to show them. Each piece lists its price and bids, and you place a bid to make it yours. Works run from $300 to $1,000.",
+      "tags": [
+        "original paintings",
+        "bidding",
+        "gallery"
+      ],
+      "button": {
+        "label": "see the gallery",
+        "url": "https://lujane-art.lujane.workers.dev/",
+        "style": "solid"
+      },
+      "flip": true,
+      "bg": "#FFF8EC",
+      "ink": "#2B2420",
+      "mute": "#6E625A",
+      "btn": "#2B2420",
+      "btnInk": "#FFF8EC",
+      "shadow": "#C9B66B",
+      "card": "#FFFFFF",
+      "cardInk": "#6E625A",
+      "media": [
+        {
+          "src": "media/lujane-art-tour.gif",
+          "caption": "",
+          "kind": "big",
+          "badge": "screen recording",
+          "alt": "Scrolling through the Lujane Art gallery"
+        },
+        {
+          "src": "media/p-majestic.jpg",
+          "caption": "",
+          "kind": "tall",
+          "badge": "",
+          "alt": "Painting: majestic"
+        },
+        {
+          "src": "media/p-overstim.jpg",
+          "caption": "",
+          "kind": "tall",
+          "badge": "",
+          "alt": "Painting: overstimulated"
+        },
+        {
+          "src": "media/p-melting.jpg",
+          "caption": "",
+          "kind": "tall",
+          "badge": "",
+          "alt": "Painting: melting from within"
+        },
+        {
+          "src": "media/art-0.jpg",
+          "caption": "the gallery",
+          "kind": "grid",
+          "badge": "",
+          "alt": "Gallery grid with prices and bid counts"
+        },
+        {
+          "src": "media/art-1.jpg",
+          "caption": "more works",
+          "kind": "grid",
+          "badge": "",
+          "alt": "More paintings in the gallery"
+        }
+      ]
+    },
+    {
+      "id": "darvr2dac",
+      "nav": "darvr2dac",
+      "logo": "",
+      "title": "darvr2dac",
+      "body": "\"For Palestine to Palestine.\" A Palestine awareness brand and fundraising store with stickers, posters and keychains. The site also teaches the symbols of Palestinian identity: olives, the spoon, the kuffiyah, the Key of Return, Yaffa oranges, the dove, Handala and watermelons.",
+      "tags": [
+        "online store",
+        "awareness pages",
+        "fundraising"
+      ],
+      "button": {
+        "label": "open the store",
+        "url": "https://darvr2dac.square.site/",
+        "style": "solid"
+      },
+      "flip": false,
+      "bg": "#F4EEDC",
+      "ink": "#2F3A1C",
+      "mute": "#66703F",
+      "btn": "#5F6F3C",
+      "btnInk": "#FFF8EC",
+      "shadow": "#FF3B00",
+      "card": "#FFFFFF",
+      "cardInk": "#66703F",
+      "media": [
+        {
+          "src": "media/darvr2dac-site.gif",
+          "caption": "",
+          "kind": "big",
+          "badge": "screen recording",
+          "alt": "Screen recording of the DARVR2DAC site"
+        },
+        {
+          "src": "media/darvr2dac-top-0.jpg",
+          "caption": "the home page",
+          "kind": "grid",
+          "badge": "",
+          "alt": "DARVR2DAC home page: For Palestine to Palestine"
+        },
+        {
+          "src": "media/darvr2dac-site-0.jpg",
+          "caption": "olives and the spoon",
+          "kind": "grid",
+          "badge": "",
+          "alt": "DARVR2DAC symbols section with olives and the spoon"
+        },
+        {
+          "src": "media/darvr2dac-site-1.jpg",
+          "caption": "kuffiyah and the key",
+          "kind": "grid",
+          "badge": "",
+          "alt": "DARVR2DAC symbols section with the kuffiyah and the Key of Return"
+        }
+      ]
+    },
+    {
+      "id": "ayah",
+      "nav": "ayah",
+      "logo": "",
+      "title": "ayah",
+      "body": "A Quran verse widget for reading and memorizing. Pick any surah and verse, show English, Arabic or tafsir, and listen with a choice of reciters at the speed you want. Star verses to build your memorized list, then recite a page out loud and have it checked live. It installs to your home screen.",
+      "tags": [
+        "read",
+        "memorize",
+        "check",
+        "installable"
+      ],
+      "button": {
+        "label": "open ayah",
+        "url": "https://lujaneyaffa.github.io/ayah/",
+        "style": "solid"
+      },
+      "flip": true,
+      "bg": "#1F3D2E",
+      "ink": "#F6EFDD",
+      "mute": "#B8C7B4",
+      "btn": "#F6EFDD",
+      "btnInk": "#1F3D2E",
+      "shadow": "#C9B66B",
+      "card": "#F6EFDD",
+      "cardInk": "#3D5A49",
+      "media": [
+        {
+          "src": "media/ayah-site.gif",
+          "caption": "",
+          "kind": "big",
+          "badge": "screen recording",
+          "alt": "Screen recording of Ayah: reading verses, then the memorization check"
+        },
+        {
+          "src": "media/ayah-site-0.jpg",
+          "caption": "read",
+          "kind": "grid",
+          "badge": "",
+          "alt": "Ayah reading view with Arabic and English"
+        },
+        {
+          "src": "media/ayah-site-2.jpg",
+          "caption": "check",
+          "kind": "grid",
+          "badge": "",
+          "alt": "Ayah memorization check with colour-coded verses"
+        }
+      ]
+    },
+    {
+      "id": "health",
+      "nav": "health tracker",
+      "logo": "",
+      "title": "health tracker",
+      "body": "A private daily log for energy, mood, sleep, routines, medications and appointments, with a calendar and notes. It sits behind an unlock screen because the data is personal, so there are no screenshots here.",
+      "tags": [
+        "daily log",
+        "calendar",
+        "locked"
+      ],
+      "button": {
+        "label": "private app",
+        "url": "",
+        "style": "outline"
+      },
+      "flip": false,
+      "bg": "#E9E2F2",
+      "ink": "#2B2340",
+      "mute": "#6A6082",
+      "btn": "#6A6082",
+      "btnInk": "#FFFFFF",
+      "shadow": "#6A6082",
+      "card": "#FFFFFF",
+      "cardInk": "#6A6082",
+      "media": []
+    }
+  ],
+  "footer": {
+    "left": "lujane yaffa",
+    "right": "toronto · october 2026"
+  }
+}
