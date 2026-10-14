@@ -9,10 +9,10 @@
     "tilt": true
   },
   "hero": {
-    "title": "Lujane Yaffa",
+    "title": "lujane yaffa",
     "tagline": "websites, apps, and projects i'm working on. everything here is live.",
     "bg": "#fefaff",
-    "ink": "#8e718d",
+    "ink": "#ffffff",
     "titleColor": "#000000",
     "showNav": true
   },
@@ -25,9 +25,9 @@
       "body": "A community calendar and directory for Muslim women in the GTA. It lists hundreds of events across sports, trips, knowledge and clubs, plus tens of mapped Muslim women-owned and Muslim-supporting businesses. It also has clubs and squads for badminton, Quran, cowork and steps. It works offline as an installable web app.",
       "tags": [
         "calendar",
-        "map directory",
-        "clubs & squads",
-        "works offline"
+        "directory",
+        "clubs",
+        "squads"
       ],
       "button": {
         "label": "open 4dasistas.ca",
@@ -108,7 +108,7 @@
       "tags": [
         "original paintings",
         "bidding",
-        "gallery"
+        "local"
       ],
       "button": {
         "label": "see the gallery",
@@ -130,21 +130,27 @@
           "caption": "",
           "kind": "big",
           "badge": "screen recording",
-          "alt": "Scrolling through the Lujane Art gallery"
+          "alt": "Scrolling through the Lujane Art gallery",
+          "span": 6,
+          "ratio": "16/9"
         },
         {
           "src": "media/p-majestic.jpg",
           "caption": "",
           "kind": "tall",
           "badge": "",
-          "alt": "Painting: majestic"
+          "alt": "Painting: majestic",
+          "span": 3,
+          "ratio": "1/1"
         },
         {
-          "src": "media/melting-from-within-mu4psu8l-1-mv8g1cdo.jpg",
+          "src": "media/1-2-yaffa-1947-2023-mv8h924o.jpg",
           "caption": "",
           "kind": "tall",
           "badge": "",
-          "alt": "Painting: overstimulated"
+          "alt": "Painting: overstimulated",
+          "span": 3,
+          "ratio": "1/1"
         }
       ]
     },
@@ -232,7 +238,9 @@
           "caption": "",
           "kind": "big",
           "badge": "screen recording",
-          "alt": "Screen recording of Health Tracker: today, calendar, maintenance, notes, care"
+          "alt": "Screen recording of Health Tracker: today, calendar, maintenance, notes, care",
+          "span": 6,
+          "ratio": "4/3"
         }
       ]
     },
@@ -268,20 +276,25 @@
           "caption": "",
           "kind": "big",
           "badge": "screen recording",
-          "alt": "Screen recording of Ayah: reading verses, then the memorization check"
+          "alt": "Screen recording of Ayah: reading verses, then the memorization check",
+          "ratio": "1/1",
+          "span": 3
         },
         {
           "src": "media/ayah-site-2.jpg",
           "caption": "check",
           "kind": "tall",
           "badge": "",
-          "alt": "Ayah memorization check with colour-coded verses"
+          "alt": "Ayah memorization check with colour-coded verses",
+          "ratio": "1/1",
+          "span": 3
         }
       ]
     }
   ],
   "footer": {
     "left": "lujane yaffa",
-    "right": "toronto · october 2026"
+    "right": "oakville · october 2026",
+    "ink": "#000000"
   }
 }
