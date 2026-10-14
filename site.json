@@ -15,7 +15,7 @@
     "ink": "#4A1D1B",
     "titleColor": "#c6b7cc",
     "showNav": true,
-    "sticker": "media/darvr-logo.jpg",
+    "sticker": "media/logo.jpg",
     "showSticker": true
   },
   "sections": [
@@ -81,7 +81,39 @@
           "badge": "",
           "alt": "4DASISTAS squads: Quran, Badminton, Cowork and Steps"
         }
-      ]
+      ],
+      "bubbles": [
+        {
+          "name": "quest",
+          "img": "media/club-quest.png",
+          "text": "Escape rooms, VR, challenges and adrenaline-filled activities.",
+          "color": "#D6E6F7",
+          "ink": "#3C5A7A"
+        },
+        {
+          "name": "cuisine",
+          "img": "media/club-cuisine.png",
+          "text": "Group dinners, halal restaurant crawls and food adventures.",
+          "color": "#FFEDB5",
+          "ink": "#9A6A12"
+        },
+        {
+          "name": "arts",
+          "img": "media/club-arts.png",
+          "text": "Painting nights, DIY sessions and low-key crafternoons.",
+          "color": "#E4DDF7",
+          "ink": "#6B54B8"
+        },
+        {
+          "name": "field",
+          "img": "media/club-field.png",
+          "text": "Lakes, hikes, cabins and nature days away from the city.",
+          "color": "#D9EBD6",
+          "ink": "#2F5B44"
+        }
+      ],
+      "bubblesTitle": "the clubs",
+      "bubblesHint": "hover a bubble"
     },
     {
       "id": "art",
@@ -173,6 +205,20 @@
           "alt": "Screen recording of the DARVR2DAC site"
         },
         {
+          "src": "media/darvr2dac-shop.gif",
+          "caption": "the shop",
+          "kind": "big",
+          "badge": "screen recording",
+          "alt": "Scrolling the DARVR2DAC shop"
+        },
+        {
+          "src": "media/darvr2dac-martyrs.gif",
+          "caption": "the martyrs page",
+          "kind": "big",
+          "badge": "screen recording",
+          "alt": "Scrolling the martyrs page"
+        },
+        {
           "src": "media/darvr2dac-site-0.jpg",
           "caption": "olives and the spoon",
           "kind": "grid",
@@ -193,18 +239,19 @@
       "nav": "health tracker",
       "logo": "",
       "title": "My Amana",
-      "body": "A private daily log for energy, mood, sleep, routines, medications and appointments, with a calendar and notes. It sits behind an unlock screen because the data is personal, so there are no screenshots here.",
+      "body": "A daily log for energy, mood, sleep, routines, medications and appointments, with a calendar, notes and care pages. The live link opens a demo with made-up sample data, so you can look around.",
       "tags": [
         "daily log",
         "calendar",
-        "locked"
+        "care",
+        "demo data"
       ],
       "button": {
-        "label": "private app",
-        "url": "",
-        "style": "outline"
+        "label": "open the demo",
+        "url": "https://health-tracker.lujane.workers.dev/",
+        "style": "solid"
       },
-      "flip": false,
+      "flip": true,
       "bg": "#E9E2F2",
       "ink": "#2B2340",
       "mute": "#6A6082",
@@ -213,7 +260,36 @@
       "shadow": "#6A6082",
       "card": "#FFFFFF",
       "cardInk": "#6A6082",
-      "media": []
+      "media": [
+        {
+          "src": "media/health-tracker.gif",
+          "caption": "",
+          "kind": "big",
+          "badge": "screen recording",
+          "alt": "Screen recording of Health Tracker: today, calendar, maintenance, notes, care"
+        },
+        {
+          "src": "media/health-today.jpg",
+          "caption": "today",
+          "kind": "grid",
+          "badge": "",
+          "alt": "Health Tracker today view"
+        },
+        {
+          "src": "media/health-calendar.jpg",
+          "caption": "calendar",
+          "kind": "grid",
+          "badge": "",
+          "alt": "Health Tracker month calendar"
+        },
+        {
+          "src": "media/health-care.jpg",
+          "caption": "care",
+          "kind": "grid",
+          "badge": "",
+          "alt": "Health Tracker care page"
+        }
+      ]
     },
     {
       "id": "ayah",

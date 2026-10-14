@@ -1,7 +1,7 @@
 /* Visual editor for lujaneyaffa.github.io. Loaded only with ?edit. Saves to GitHub via the Contents API. */
 (function(){
 const FONTS=["Permanent Marker","Outfit","Caveat","Pacifico","Playfair Display","DM Serif Display","Space Grotesk","Fraunces","Rock Salt","Shadows Into Light","Gloria Hallelujah","Amatic SC","Bebas Neue","Lora","Inter","Poppins","DM Sans","Syne","Abril Fatface","Lobster"];
-const COLORS=[["bg","background"],["ink","text"],["mute","soft text"],["btn","button"],["btnInk","button text"],["shadow","shadow"],["card","photo frame"],["cardInk","caption"]];
+const COLORS=[["bg","background"],["ink","text"],["mute","soft text"],["btn","button"],["btnInk","button text"],["shadow","shadow"],["card","photo frame"],["cardInk","caption"],["line","borders"]];
 const LS={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}},del(k){try{localStorage.removeItem(k)}catch(e){}}};
 const pending={}; // path -> {b64, dataUrl}
 let dirty=false, bar, panel, toast;
@@ -120,12 +120,10 @@ function themePanel(){const t=SITE.theme;
   openPanel(`<h3>fonts</h3><label>headings ${fontSel("hf",t.headingFont)}</label><label>body ${fontSel("bf",t.bodyFont)}</label>
   <label>text size <input type="range" id="bs" min="14" max="22" value="${t.baseSize}"></label><label>heading size <input type="range" id="hs" min="60" max="140" value="${Math.round((t.headScale||1)*100)}"></label>
   <h3>page</h3><label>page background <input type="color" id="pb" value="${t.pageBg}"></label><label>page text <input type="color" id="pi" value="${t.pageInk}"></label>
-  <label>tilted screenshots <input type="checkbox" id="tl" ${t.tilt?"checked":""}></label>
   <p class="h">Colours for each project are under "design" on that section.</p><button class="edb" id="x">close</button>`,p=>{
     const on=(id,f)=>p.querySelector("#"+id).addEventListener("input",e=>{f(e.target);mark();window.render();});
     on("hf",e=>t.headingFont=e.value);on("bf",e=>t.bodyFont=e.value);on("bs",e=>t.baseSize=+e.value);on("hs",e=>t.headScale=e.value/100);
-    on("pb",e=>t.pageBg=e.value);on("pi",e=>t.pageInk=e.value);p.querySelector("#tl").onchange=e=>{t.tilt=e.target.checked;mark();window.render()};
-    p.querySelector("#x").onclick=()=>panel.style.display="none"})}
+    on("pb",e=>t.pageBg=e.value);on("pi",e=>t.pageInk=e.value);    p.querySelector("#x").onclick=()=>panel.style.display="none"})}
 bar.querySelector("#th").onclick=themePanel;
 
 function heroPanel(){const h=SITE.hero;
@@ -145,7 +143,7 @@ function secPanel(i){const s=SITE.sections[i];
   <label>button look <select id="bst"><option value="solid" ${s.button.style==="solid"?"selected":""}>solid</option><option value="outline" ${s.button.style==="outline"?"selected":""}>outline</option></select></label>
   <label>tags (commas) <input type="text" id="tg" value="${(s.tags||[]).join(", ")}"></label>
   <label>photos on left <input type="checkbox" id="fl" ${s.flip?"checked":""}></label>
-  <h3>colours</h3>${COLORS.map(([k,l])=>`<label>${l} <input type="color" data-c="${k}" value="${s[k]}"></label>`).join("")}
+  <h3>colours</h3>${COLORS.map(([k,l])=>`<label>${l} <input type="color" data-c="${k}" value="${s[k]||"#c9c4bc"}"></label>`).join("")}
   <h3>round logo</h3><button class="edb" id="lg">${s.logo?"change":"add"} logo</button> ${s.logo?'<button class="edb" id="lgx">remove</button>':""}
   <p class="h">Click any words on the page to retype them.</p><button class="edb" id="x">close</button>`,p=>{
     const on=(id,f,ev="input")=>p.querySelector("#"+id).addEventListener(ev,e=>{f(e.target);mark();rerender()});
