@@ -290,6 +290,36 @@
           "span": 3
         }
       ]
+    },
+    {
+      "id": "work",
+      "nav": "work with me",
+      "logo": "",
+      "title": "work with me",
+      "body": "I rebuild websites and Instagram pages for local businesses, using your own brand colours. I design the new look, update your site on the platform you already use, and prepare branded Instagram posts that are ready to publish. A website refresh plus 9 Instagram posts starts at $500.",
+      "tags": [
+        "website refresh",
+        "instagram posts",
+        "your brand colours",
+        "starting at $500"
+      ],
+      "button": {
+        "label": "get in touch",
+        "url": "",
+        "style": "solid"
+      },
+      "links": [],
+      "flip": false,
+      "bg": "#2B2420",
+      "ink": "#FFF8EC",
+      "mute": "#CBBFB2",
+      "btn": "#FFF8EC",
+      "btnInk": "#2B2420",
+      "shadow": "#CF8591",
+      "card": "#FFFFFF",
+      "cardInk": "#6E625A",
+      "line": "#6E625A",
+      "media": []
     }
   ],
   "footer": {
