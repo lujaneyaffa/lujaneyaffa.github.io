@@ -304,11 +304,16 @@
         "starting at $500"
       ],
       "button": {
-        "label": "get in touch",
-        "url": "",
+        "label": "message me on instagram",
+        "url": "https://www.instagram.com/lujaneyaffa/",
         "style": "solid"
       },
-      "links": [],
+      "links": [
+        {
+          "type": "ig",
+          "url": "https://www.instagram.com/lujaneyaffa/"
+        }
+      ],
       "flip": false,
       "bg": "#2B2420",
       "ink": "#FFF8EC",
